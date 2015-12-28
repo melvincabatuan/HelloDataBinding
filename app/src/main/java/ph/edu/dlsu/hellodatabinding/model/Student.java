@@ -9,10 +9,12 @@ import android.databinding.Bindable;
 public class Student extends BaseObservable {
     private String firstName;
     private String lastName;
+    private int idNumber;
 
-    public Student(String firstName, String lastName) {
+    public Student(String firstName, String lastName, int idNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.idNumber = idNumber;
     }
 
 
@@ -27,6 +29,12 @@ public class Student extends BaseObservable {
         return this.lastName;
     }
 
+
+    @Bindable
+    public int getIdNumber() {
+        return this.idNumber;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
         notifyPropertyChanged(ph.edu.dlsu.hellodatabinding.BR.firstName);
@@ -35,5 +43,10 @@ public class Student extends BaseObservable {
     public void setLastName(String lastName) {
         this.lastName = lastName;
         notifyPropertyChanged(ph.edu.dlsu.hellodatabinding.BR.lastName);
+    }
+
+    public void setIdNumber(int idNumber) {
+        this.idNumber = idNumber;
+        notifyPropertyChanged(ph.edu.dlsu.hellodatabinding.BR.idNumber);
     }
 }
